@@ -1,0 +1,34 @@
+---
+import Counter from "../components/Counter";
+import Header from "../components/Header.astro";
+const title = "Astro JSJam Demo";
+
+//const pokemon = await fetch("https://pokeapi.co/api/v2/pokemon/ditto");
+//const pokemonData = await pokemon.json();
+const pokemonData = {
+	name: "Ditto",
+}
+---
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Welcome to Astro</title>
+	<style>
+		h1 { color: red }
+	</style>
+</head>
+
+<body>
+	<h1>Welcome to <a href="https://astro.build/">{title}</a></h1>
+	<pre>
+	<code>{ JSON.stringify(pokemonData, null, 2) }</code>
+	</pre>
+	<Counter client:idle />
+	<Header name="Carlton" />
+</body>
+
+</html>
